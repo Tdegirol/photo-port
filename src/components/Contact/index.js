@@ -1,7 +1,8 @@
 import React from "react";
 
 function ContactForm() {
-    <section>
+    return (
+        <section>
         <h1>Contact me</h1>
         <form id='contact-form'>
             <div>
@@ -19,6 +20,7 @@ function ContactForm() {
             <button type='submit'>Submit</button>
         </form>
     </section>
+    )
 };
 
 export default ContactForm;
