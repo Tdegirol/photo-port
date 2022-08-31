@@ -5,38 +5,46 @@ import Gallery from './components/Gallery';
 import ContactForm from './components/Contact';
 import './App.css';
 
+
 function App(){
-    const [categories] = useState([
-        {
-            name: 'Commercial',
-            description:'Photos of grocery stores, food trucks, and other commercial products',
-        },
-        { name: 'Portraits', description: 'Portaits of people in my life' },
-        { name: 'Food', description: 'Delicious delicacies' },
-        {
-            name: 'Landscape',
-            description: 'Fields, farmhouses, waterfalls, and the beauty of nature',
-        },
-    ]);
+  const [contactSelected, setContactSelected] = useState(false);
 
-    const [currentCategory, setCurrentCategory] = useState(categories[0]);
+  const [categories] = useState([
+      {
+          name: 'Commercial',
+          description:'Photos of grocery stores, food trucks, and other commercial products',
+      },
+      { name: 'Portraits', description: 'Portaits of people in my life' },
+      { name: 'Food', description: 'Delicious delicacies' },
+      {
+          name: 'Landscape',
+          description: 'Fields, farmhouses, waterfalls, and the beauty of nature',
+      },
+  ]);
 
-    return(
-      <div>
-          <Nav
-            categories={categories}
-            setCurrentCategory={setCurrentCategory}
-            currentCategory={currentCategory}
-          ></Nav>
-          <main>
-            <div>
-                <ContactForm></ContactForm>
-                <Gallery currentCategory={currentCategory}></Gallery>
-                <About></About>
-            </div>
-          </main>
-      </div>
-    );
+  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+
+  return(
+    <div>
+        <Nav
+          categories={categories}
+          setCurrentCategory={setCurrentCategory}
+          currentCategory={currentCategory}
+          contactSelected={contactSelected}
+          setContactSelected={setContactSelected}
+        ></Nav>
+        <main>
+          {!contactSelected ? (
+            <>
+              <Gallery currentCategory={currentCategory}></Gallery>
+              <About></About>
+            </>
+          ) : (
+            <ContactForm></ContactForm>
+          )}
+        </main>
+    </div>
+  );
 };
 
 export default App;
