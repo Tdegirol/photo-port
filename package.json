@@ -1,4 +1,5 @@
 {
+  "homepage": "http://tdegirol.github.io/photo-port",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -8,9 +9,8 @@
     "@testing-library/user-event": "^12.8.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "^5.0.1",
-    "web-vitals": "^1.1.1",
-    "homepage": "http://tdegirol.github.io/photo-port"
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,6 +41,6 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.8.0",
     "@testing-library/react": "^9.5.0",
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^3.0.0"
   }
 }
